@@ -6,6 +6,7 @@ function App() {
     queryKey: ['weather'],
     queryFn: () => getWeather({ lat: 43, lon: 50 })
   })
+
   return (
     <>
       {JSON.stringify(data)}

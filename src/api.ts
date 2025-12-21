@@ -1,3 +1,5 @@
+import { weatherSchema } from "./schemas/weatherSchema";
+
 const API_KEY = import.meta.env.VITE_API_KEY;
 
 export async function getWeather({ lat, lon }: { lat: number; lon: number }) {
@@ -6,5 +8,5 @@ export async function getWeather({ lat, lon }: { lat: number; lon: number }) {
   );
   const data = await res.json();
 
-  return data;
+  return weatherSchema.parse(data);
 }
