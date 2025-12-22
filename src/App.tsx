@@ -9,11 +9,17 @@ import AdditionalInfo from "./components/cards/AdditionalInfo"
 import type { Coords } from "./types"
 
 function App() {
-  const [coords, setCoords] = useState<Coords>({ lat: 10, lon: 25 });
+  const [coords, setCoords] = useState<Coords>({ lat: 42, lon: 23 });
+
+  const onMapClick = (lat: number, lon: number) => {
+    setCoords({lat, lon});
+  }
+
+  console.log(coords);
 
   return (
     <div className="flex flex-col gap-8">
-      <Map />
+      <Map coords={coords} onMapClick={onMapClick}/>
       <CurrentWeather coords={coords} />
       <HourlyForecast coords={coords} />
       <DailyForecast coords={coords} />
