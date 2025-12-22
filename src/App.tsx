@@ -4,6 +4,7 @@ import { getWeather } from "./api"
 import DailyForecast from "./components/DailyForecast"
 import HourlyForecast from "./components/HourlyForecast"
 import CurrentWeather from "./components/cards/CurrentWeather"
+import AdditionalInfo from "./components/cards/AdditionalInfo"
 
 function App() {
   const { data } = useQuery({
@@ -16,6 +17,7 @@ function App() {
       <CurrentWeather />
       <HourlyForecast />
       <DailyForecast />
+      <AdditionalInfo />
     </div>
   )
 }
