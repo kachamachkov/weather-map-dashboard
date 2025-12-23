@@ -29,7 +29,7 @@ export default function CurrentWeather({ coords }: Props) {
           src={data.current.weather[0].icon}
         />
 
-        <h3 className='capitalize text-xl'>t
+        <h3 className='capitalize text-xl'>
           {data.current.weather[0].description}
         </h3>
       </div>
