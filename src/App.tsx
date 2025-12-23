@@ -18,6 +18,7 @@ function App() {
   const { data: geocodeData } = useQuery({
     queryKey: ['geocode', location],
     queryFn: () => getGeocode(location),
+    enabled: location !== 'custom'
   });
 
   const onMapClick = (lat: number, lon: number) => {
