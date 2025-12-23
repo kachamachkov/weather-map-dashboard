@@ -13,6 +13,8 @@ export default function LocationDropdown({ location, setLocation }: Props) {
         <SelectValue placeholder="Theme" />
       </SelectTrigger>
       <SelectContent className="z-1001">
+        {location === 'custom' && (<SelectItem value="custom">Custom</SelectItem>)}
+
         {locations.map((city) => (
           <SelectItem key={city} value={city} >
             {city}
