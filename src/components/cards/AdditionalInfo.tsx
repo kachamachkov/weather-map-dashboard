@@ -32,7 +32,7 @@ export default function AdditionalInfo({ coords }: Props) {
             <Icon className="size-8 invert" />
           </div>
           <span>
-            <FormatComponent value={value} number={data.current[value]} />
+            <FormatComponent value={value} number={data!.current[value]} />
           </span>
         </div>
       ))}

@@ -21,16 +21,16 @@ export default function CurrentWeather({ coords }: Props) {
     >
       <div className='flex flex-col gap-2 items-center'>
         <h2 className='text-6xl font-semibold text-center'>
-          {Math.round(data.current.temp)}°C
+          {Math.round(data!.current.temp)}°C
         </h2>
 
         <WeatherIcon
           className='size-14'
-          src={data.current.weather[0].icon}
+          src={data!.current.weather[0].icon}
         />
 
         <h3 className='capitalize text-xl'>
-          {data.current.weather[0].description}
+          {data!.current.weather[0].description}
         </h3>
       </div>
       <div className='flex flex-col gap-2'>
@@ -39,22 +39,22 @@ export default function CurrentWeather({ coords }: Props) {
           hour: '2-digit',
           minute: '2-digit',
           hour12: true,
-          timeZone: data.timezone,
-        }).format(new Date(data.current.dt * 1000))}</h3>
+          timeZone: data!.timezone,
+        }).format(new Date(data!.current.dt * 1000))}</h3>
       </div>
 
       <div className='flex justify-between w-full'>
         <div className='flex flex-col items-center gap-2'>
           <p className='text-gray-500'>Feels Like</p>
-          <p>{Math.round(data.current.feels_like)}°C</p>
+          <p>{Math.round(data!.current.feels_like)}°C</p>
         </div>
         <div className='flex flex-col items-center gap-2'>
           <p className='text-gray-500'>Humidity Like</p>
-          <p>{Math.round(data.current.humidity)}%</p>
+          <p>{Math.round(data!.current.humidity)}%</p>
         </div>
         <div className='flex flex-col items-center gap-2'>
           <p className='text-gray-500'>Wind</p>
-          <p>{Math.round(data.current.wind_speed)} kmh</p>
+          <p>{Math.round(data!.current.wind_speed)} kmh</p>
         </div>
       </div>
     </Card>

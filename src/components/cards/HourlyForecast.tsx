@@ -19,7 +19,7 @@ export default function HourlyForecast({ coords }: Props) {
       title="Hourly Forecast (48 Hours)"
       childrenClassName="flex gap-6 overflow-x-scroll"
     >
-      {data?.hourly.map((hour) => (
+      {data!.hourly.map((hour) => (
         <div
           key={hour.dt}
           className="flex flex-col 2xl:justify-between gap-2 items-center p-2"
