@@ -31,5 +31,5 @@ const types = [
   "precipitation_new",
   "pressure_new",
   "wind_new",
-  "temp_new ",
+  "temp_new",
 ];
