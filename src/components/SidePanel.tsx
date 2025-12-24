@@ -8,6 +8,7 @@ import clsx from "clsx"
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip.tsx"
 import Information from '/src/assets/information.svg?react';
 import Chevron from '/src/assets/chevronLeft.svg?react';
+import SidePanelSkeleton from "./skeletons/SidePanelSkeleton.tsx"
 
 type Props = {
   coords: Coords,
@@ -23,7 +24,7 @@ export default function SidePanel(props: Props) {
       <button onClick={() => setIsSidePanelOpen(false)}>
         <Chevron className="size-8 invert -ml-2" />
       </button>
-      <Suspense>
+      <Suspense fallback={<SidePanelSkeleton />}>
         <AirPollution {...props} />
       </Suspense>
     </div>
