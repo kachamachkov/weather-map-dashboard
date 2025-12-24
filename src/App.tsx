@@ -16,6 +16,7 @@ import CurrentSkeleton from "./components/skeletons/CurrentSkeleton.tsx"
 import DailySkeleton from "./components/skeletons/DailySkeleton.tsx"
 import HourlySkeleton from "./components/skeletons/HourlySkeleton.tsx"
 import AdditionalInfoSkeleton from "./components/skeletons/AdditionalInfoSkeleton.tsx"
+import SidePanel from "./components/SidePanel.tsx"
 
 function App() {
   const [coordinates, setCoords] = useState<Coords>({ lat: 42, lon: 23 });
@@ -38,34 +39,38 @@ function App() {
     : { lat: geocodeData?.[0].lat ?? 0, lon: geocodeData?.[0].lon ?? 0 }
 
   return (
-    <div className="flex flex-col gap-8">
-      <div className="flex gap-8">
-        <div className="flex gap-4">
-          <h3 className="text-2xl font-semibold">Location:</h3>
-          <LocationDropdown location={location} setLocation={setLocation} />
+    <>
+      <div className="flex flex-col gap-8">
+        <div className="flex gap-8">
+          <div className="flex gap-4">
+            <h3 className="text-2xl font-semibold">Location:</h3>
+            <LocationDropdown location={location} setLocation={setLocation} />
+          </div>
+          <div className="flex gap-4">
+            <h3 className="text-2xl font-semibold">Map Type:</h3>
+            <MapTypeDropdown mapType={mapType} setMapType={setMapType} />
+          </div>
         </div>
-        <div className="flex gap-4">
-          <h3 className="text-2xl font-semibold">Map Type:</h3>
-          <MapTypeDropdown mapType={mapType} setMapType={setMapType} />
+        <div className="relative">
+          <Map coords={coords} onMapClick={onMapClick} mapType={mapType} />
+          <MapLegend mapType={mapType} />
         </div>
+        <Suspense fallback={<CurrentSkeleton />}>
+          <CurrentWeather coords={coords} />
+        </Suspense>
+        <Suspense fallback={<HourlySkeleton />}>
+          <HourlyForecast coords={coords} />
+        </Suspense>
+        <Suspense fallback={<DailySkeleton />}>
+          <DailyForecast coords={coords} />
+        </Suspense>
+        <Suspense fallback={<AdditionalInfoSkeleton />}>
+          <AdditionalInfo coords={coords} />
+        </Suspense>
       </div>
-      <div className="relative">
-        <Map coords={coords} onMapClick={onMapClick} mapType={mapType} />
-        <MapLegend mapType={mapType} />
-      </div>
-      <Suspense fallback={<CurrentSkeleton />}>
-        <CurrentWeather coords={coords} />
-      </Suspense>
-      <Suspense fallback={<HourlySkeleton />}>
-        <HourlyForecast coords={coords} />
-      </Suspense>
-      <Suspense fallback={<DailySkeleton />}>
-        <DailyForecast coords={coords} />
-      </Suspense>
-      <Suspense fallback={<AdditionalInfoSkeleton />}>
-        <AdditionalInfo coords={coords} />
-      </Suspense>
-    </div>
+
+      <SidePanel coords={coords} />
+    </>
   )
 }
 
