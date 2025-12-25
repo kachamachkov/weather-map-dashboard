@@ -1,25 +1,31 @@
 import { Suspense, useState } from "react"
 
+import { useQuery } from "@tanstack/react-query"
+
+import { getGeocode } from "./api"
+
+import type { Coords } from "./types"
+
 import Map from "./components/Map"
+import SidePanel from "./components/SidePanel.tsx"
+import MobileHeader from "./components/MobileHeader.tsx"
+import MapLegend from "./components/MapLegend.tsx"
+
 import CurrentWeather from "./components/cards/CurrentWeather"
 import HourlyForecast from "./components/cards/HourlyForecast"
 import DailyForecast from "./components/cards/DailyForecast"
 import AdditionalInfo from "./components/cards/AdditionalInfo"
 
-import type { Coords } from "./types"
 import LocationDropdown from "./components/dropdowns/LocationDropdown"
-import { useQuery } from "@tanstack/react-query"
-import { getGeocode } from "./api"
 import MapTypeDropdown from "./components/dropdowns/MapTypeDropdown.tsx"
-import MapLegend from "./components/MapLegend.tsx"
+import LightDarkToggle from "./components/LightDarkToggle.tsx"
+
 import CurrentSkeleton from "./components/skeletons/CurrentSkeleton.tsx"
 import DailySkeleton from "./components/skeletons/DailySkeleton.tsx"
 import HourlySkeleton from "./components/skeletons/HourlySkeleton.tsx"
 import AdditionalInfoSkeleton from "./components/skeletons/AdditionalInfoSkeleton.tsx"
-import SidePanel from "./components/SidePanel.tsx"
+
 import Hamburger from '/src/assets/hamburger.svg?react';
-import MobileHeader from "./components/MobileHeader.tsx"
-import LightDarkToggle from "./components/LightDarkToggle.tsx"
 
 function App() {
   const [coordinates, setCoords] = useState<Coords>({ lat: 42, lon: 23 });
