@@ -2,16 +2,12 @@ import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet"
 import 'leaflet/dist/leaflet.css'
 import type { Coords } from "../types"
 import L from 'leaflet'
-import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
-import markerIcon from 'leaflet/dist/images/marker-icon.png';
-import markerShadow from 'leaflet/dist/images/marker-shadow.png';
+import mapMarker from '../assets/map-marker.svg'
 
-// This fixes the marker icon for prod build
-delete (L.Icon.Default.prototype as any)._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: markerIcon2x,
-  iconUrl: markerIcon,
-  shadowUrl: markerShadow,
+const customIcon = L.icon({
+  iconUrl: mapMarker,
+  iconSize: [32, 32],
+  iconAnchor: [16, 32],
 });
 
 const API_KEY = import.meta.env.VITE_API_KEY;
@@ -43,7 +39,7 @@ export default function Map({ coords, onMapClick, mapType }: Props) {
         url={`https://tile.openweathermap.org/map/${mapType}/{z}/{x}/{y}.png?appid=${API_KEY}`}
       />
 
-      <Marker position={[lat, lon]} />
+      <Marker position={[lat, lon]} icon={customIcon} />
     </MapContainer>
   )
 }
