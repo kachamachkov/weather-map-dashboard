@@ -10,18 +10,18 @@ export default function SideCardSkeleton({ }: Props) {
       className="hover:scale-105 transition-transform duration-300 from-sidebar-accent to-sidebar-accent/60 gap-0!"
     >
       <div className="flex justify-between">
-        <Skeleton className="w-12 h-7 bg-sidebar" />
-        <Skeleton className="w-12 h-7 bg-sidebar" />
+        <Skeleton className="w-12 h-7 dark:bg-sidebar" />
+        <Skeleton className="w-12 h-7 dark:bg-sidebar" />
       </div>
-      <Skeleton className="w-full h-1.5 bg-sidebar" />
+      <Skeleton className="w-full h-1.5 dark:bg-sidebar" />
 
       <div className="flex justify-between text-xs">
-        <Skeleton className="w-2 h-4 bg-sidebar" />
-        <Skeleton className="w-2 h-4 bg-sidebar" />
+        <Skeleton className="w-2 h-4 dark:bg-sidebar" />
+        <Skeleton className="w-2 h-4 dark:bg-sidebar" />
       </div>
       <div className="flex justify-between">
         {Array.from({ length: 5 }).map((_, idx) => (
-          <Skeleton key={idx} className="w-15 h-6 bg-sidebar" />
+          <Skeleton key={idx} className="w-15 h-6 dark:bg-sidebar" />
         ))}
       </div>
     </Card>

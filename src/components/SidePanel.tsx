@@ -22,7 +22,7 @@ export default function SidePanel(props: Props) {
   return (
     <div className={clsx("fixed top-0 right-0 h-screen w-(--sidebar-width) shadow-md bg-sidebar z-1001 py-8 px-4 overflow-y-scroll transition-transform duration-300 lg:translate-x-0!", isSidePanelOpen ? 'translate-x-0' : 'translate-x-full')}>
       <button onClick={() => setIsSidePanelOpen(false)}>
-        <Chevron className="size-8 invert -ml-2 lg:hidden" />
+        <Chevron className="size-8 -ml-2 lg:hidden" />
       </button>
       <Suspense fallback={<SidePanelSkeleton />}>
         <AirPollution {...props} />
@@ -45,7 +45,7 @@ function AirPollution({ coords }: Props) {
         <h1 className="text-2xl font-semibold">AQI</h1>
         <Tooltip>
           <TooltipTrigger>
-            <Information className="size-4 invert" />
+            <Information className="size-4" />
           </TooltipTrigger>
           <TooltipContent className="z-2000">
             <p className="max-w-xs">
@@ -96,7 +96,7 @@ function AirPollution({ coords }: Props) {
                 <span className="text-lg font-bold capitalize">{key}</span>
                 <Tooltip>
                   <TooltipTrigger>
-                    <Information className="size-4 invert" />
+                    <Information className="size-4" />
                   </TooltipTrigger>
                   <TooltipContent className="z-2000">
                     <p className="max-w-xs">
