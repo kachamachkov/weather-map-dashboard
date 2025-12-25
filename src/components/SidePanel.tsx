@@ -67,9 +67,9 @@ function AirPollution({ coords }: AirPollutionProps) {
   return (
     <div className="flex flex-col gap-4">
       <h1 className="text-2xl font-semibold">Air Pollution</h1>
-      <p className="text-5xl font-semibold">{data.list[0].main.aqi}</p>
+      <p className="text-5xl font-semibold">{data!.list[0].main.aqi}</p>
       <AQIHeader />
-      {Object.entries(data.list[0].components).map(([key, value]) => (
+      {Object.entries(data!.list[0].components).map(([key, value]) => (
         <PollutantCard key={key} pollutantKey={key} value={value} />
       ))}
     </div>
