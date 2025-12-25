@@ -1,6 +1,6 @@
-import { Skeleton } from "../ui/skeleton.tsx"
+import { Skeleton } from "../ui/skeleton"
 
-import SideCardSkeleton from "./SideCardSkeleton.tsx"
+import SideCardSkeleton from "./SideCardSkeleton"
 
 type Props = {}
 

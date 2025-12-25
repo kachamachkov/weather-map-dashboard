@@ -1,14 +1,14 @@
 import { Suspense } from "react";
 
-import AdditionalInfo from "./cards/AdditionalInfo.tsx";
-import CurrentWeather from "./cards/CurrentWeather.tsx";
-import DailyForecast from "./cards/DailyForecast.tsx";
-import HourlyForecast from "./cards/HourlyForecast.tsx";
+import AdditionalInfo from "./cards/AdditionalInfo";
+import CurrentWeather from "./cards/CurrentWeather";
+import DailyForecast from "./cards/DailyForecast";
+import HourlyForecast from "./cards/HourlyForecast";
 
-import AdditionalInfoSkeleton from "./skeletons/AdditionalInfoSkeleton.tsx";
-import CurrentSkeleton from "./skeletons/CurrentSkeleton.tsx";
-import DailySkeleton from "./skeletons/DailySkeleton.tsx";
-import HourlySkeleton from "./skeletons/HourlySkeleton.tsx";
+import AdditionalInfoSkeleton from "./skeletons/AdditionalInfoSkeleton";
+import CurrentSkeleton from "./skeletons/CurrentSkeleton";
+import DailySkeleton from "./skeletons/DailySkeleton";
+import HourlySkeleton from "./skeletons/HourlySkeleton";
 
 import type { Coords } from "@/types.ts";
 

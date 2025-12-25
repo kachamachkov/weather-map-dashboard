@@ -4,11 +4,20 @@ import { useSuspenseQuery } from "@tanstack/react-query";
 import clsx from "clsx";
 
 import { getAirPollution } from "@/api.ts";
+import {
+  airQualityRanges,
+  getQualityLevel,
+  pollutantNameMapping,
+  QUALITY_COLORS,
+  type AirQualityLevel,
+  type Pollutant,
+  type Range,
+} from "@/constants/airQuality";
 
-import Card from "./cards/Card.tsx";
-import SidePanelSkeleton from "./skeletons/SidePanelSkeleton.tsx";
-import { Slider } from "./ui/slider.tsx";
-import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip.tsx";
+import Card from "./cards/Card";
+import SidePanelSkeleton from "./skeletons/SidePanelSkeleton";
+import { Slider } from "./ui/slider";
+import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
 import Chevron from '/src/assets/chevronLeft.svg?react';
 import Information from '/src/assets/information.svg?react';
