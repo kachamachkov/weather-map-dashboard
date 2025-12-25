@@ -1,5 +1,6 @@
-import type { Dispatch, SetStateAction } from "react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select"
+
+import type { Dispatch, SetStateAction } from "react";
 
 type Props = {
   mapType: string,

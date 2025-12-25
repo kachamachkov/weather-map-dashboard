@@ -1,6 +1,8 @@
-import type { Dispatch, SetStateAction } from 'react';
+import LightDarkToggle from './LightDarkToggle';
+
 import Hamburger from '/src/assets/hamburger.svg?react';
-import LightDarkToggle from './LightDarkToggle.tsx';
+
+import type { Dispatch, SetStateAction } from 'react';
 
 type Props = {
   setIsSidePanelOpen: Dispatch<SetStateAction<boolean>>

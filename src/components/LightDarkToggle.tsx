@@ -1,7 +1,8 @@
-import { Switch } from "./ui/switch"
-import Sun from "/src/assets/sun.svg?react"
-import Moon from "/src/assets/moon.svg?react"
-import { useTheme } from "./ThemeProvider"
+import { useTheme } from "./ThemeProvider";
+import { Switch } from "./ui/switch";
+
+import Moon from "/src/assets/moon.svg?react";
+import Sun from "/src/assets/sun.svg?react";
 
 type Props = {}
 

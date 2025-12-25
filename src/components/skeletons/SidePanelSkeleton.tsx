@@ -1,4 +1,5 @@
 import { Skeleton } from "../ui/skeleton.tsx"
+
 import SideCardSkeleton from "./SideCardSkeleton.tsx"
 
 type Props = {}

@@ -1,8 +1,11 @@
-import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet"
-import 'leaflet/dist/leaflet.css'
-import type { Coords } from "../types"
-import L from 'leaflet'
-import mapMarker from '../assets/map-marker.svg'
+import L from "leaflet";
+import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet";
+
+import "leaflet/dist/leaflet.css";
+
+import mapMarker from "../assets/map-marker.svg";
+
+import type { Coords } from "../types";
 
 const customIcon = L.icon({
   iconUrl: mapMarker,
